@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Gestion des images</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f4f4f4;
+            padding: 20px;
+        }
+        .container {
+            display: flex;
+            justify-content: space-around;
+            align-items: flex-start;
+            flex-wrap: wrap;
+        }
+        .image-block {
+            flex: 1;
+            padding: 20px;
+            min-width: 300px;
+        }
+        img {
+            max-width: 100%;
+            max-height: 500px;
+            border: 1px solid #ccc;
+            background: white;
+        }
+        .actions {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        .actions a {
+            padding: 10px 20px;
+            text-decoration: none;
+            background-color: #1976D2;
+            color: white;
+            border-radius: 5px;
+            transition: background-color 0.2s;
+        }
+        .actions a:hover {
+            background-color: #1565C0;
+        }
+    </style>
+</head>
+<body>
+    <h1>Gestion des Images</h1>
+
+    <div class="container">
+        <div class="image-block">
+            <h2>Image actuelle</h2>
+            {% if current_image_path %}
+                <img src="{{ current_image_path }}" alt="Image actuelle">
+                <p><strong>Images restantes :</strong> {{ remaining_images }}</p>
+            {% else %}
+                <p>Aucune image disponible</p>
+            {% endif %}
+        </div>
+
+        <div class="actions image-block">
+            <h2>Actions</h2>
+            <a href="{{ url_for('save') }}">⬅️✅ Enregistrer</a>
+            <a href="{{ url_for('save_both') }}">✅✅ Enregistrer les deux</a>
+            <a href="{{ url_for('merge') }}">🔗 Fusionner</a>
+            <a href="{{ url_for('merge_next') }}">🔗 Fusionner les suivantes</a>
+            <a href="{{ url_for('delete') }}"> ➡️ Supprimer 🗑️</a>
+            <a href="{{ url_for('delete_current') }}">🗑️ Supprimer ⬅️</a>
+            <a href="{{ url_for('delete_both') }}">🗑️🗑️ Supprimer actuelle + suivante</a>
+        </div>
+
+        <div class="image-block">
+            <h2>Image suivante</h2>
+            {% if next_image_path %}
+                <img src="{{ next_image_path }}" alt="Image suivante">
+            {% else %}
+                <p>Aucune image suivante</p>
+            {% endif %}
+        </div>
+
+        <div class="image-block">
+            <h2>Suivante +1</h2>
+            {% if after_next_path %}
+                <img src="{{ after_next_path }}" alt="Image suivante +1">
+            {% else %}
+                <p>Aucune image disponible</p>
+            {% endif %}
+        </div>
+    </div>
+</body>
+</html>
