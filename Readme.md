@@ -1,15 +1,15 @@
-# To use this project you need to copy or create in a new folder :
+# To use this project you need to copy in a new folder :
 
 - download_images.ipynb
 - cut_into_zones.py
 - tryMerge.py
-- remove_useless_and_blank.py
+- remove_blank.py
+- remove_Duplicated.py
 - app.py
 - move_images.py
 - remove_old_folder.py
 - generateIndex.py
 - templates/index.html
-- Allimages/
 
 ## Zero (install dependency):
  - install anaconda navigator
@@ -17,6 +17,13 @@
  - install Python3
  - install Flask (python's server)
  
+
+ ### For each Path :
+ ### En
+ - Each path must be changed to match the place where you want to see the result e.g: "C:/Users/LA TOUR MSI DU TURFU/Desktop/python/Nouveau_Webtoons/ALLimages/" --> "C:/Users/username/Desktop/mon_super_webtoons/ALLimages/"
+ ### Fr
+ - Chaque chemin doit être changer pour correspondre à l'endroit où vous voulez voir le résultat ex : "C:/Users/LA TOUR MSI DU TURFU/Desktop/python/Nouveau_Webtoons/ALLimages/" --> "C:/Users/username/Desktop/mon_super_webtoons/ALLimages/"
+
 ## First (download images):
 - open "download_images.ipynb" with Jupyter notebook
   change the webtoons URL to the first one of wich one you want
