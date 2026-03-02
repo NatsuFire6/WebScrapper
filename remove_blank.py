@@ -4,9 +4,7 @@ import os
 # Dossiers
 input_folder = "C:/Users/LA TOUR MSI DU TURFU/Desktop/python/images_after_GPT/merged_zones"
 output_dir = "C:/Users/LA TOUR MSI DU TURFU/Desktop/python/images_after_GPT/only_img_with_interest"
-duplicates_dir = "C:/Users/LA TOUR MSI DU TURFU/Desktop/python/images_after_GPT/duplicates_removed"
 os.makedirs(output_dir, exist_ok=True)
-os.makedirs(duplicates_dir, exist_ok=True)
 
 # Extensions autorisées
 extensions = (".png", ".jpg", ".jpeg", ".bmp")
@@ -51,3 +49,4 @@ for filename in files:
         os.remove(image_path)
         continue
         
+
