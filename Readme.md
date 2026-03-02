@@ -18,7 +18,7 @@
  - install Flask (python's server)
  
 
- ### For each Path :
+ ## For each further path :
  ### En
  - Each path must be changed to match the place where you want to see the result e.g: "C:/Users/LA TOUR MSI DU TURFU/Desktop/python/Nouveau_Webtoons/ALLimages/" --> "C:/Users/username/Desktop/mon_super_webtoons/ALLimages/"
  ### Fr
