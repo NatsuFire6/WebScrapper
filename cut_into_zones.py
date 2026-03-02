@@ -1,10 +1,11 @@
 from PIL import Image
 import os
+from paths import ALL_IMAGES, ZONES
 
-# Dossier contenant les images à traiter
-input_folder = "C:/Users/LA TOUR MSI DU TURFU/Desktop/python/Nouveau_Webtoons/AllImages"
+# Dossier contenant les images à traiter (défini dans paths.py)
+input_folder = ALL_IMAGES
 # Dossier de sortie pour toutes les zones
-output_dir = "C:/Users/LA TOUR MSI DU TURFU/Desktop/python/Nouveau_Webtoons/zones"
+output_dir = ZONES
 os.makedirs(output_dir, exist_ok=True)
 
 # Extensions d’image acceptées

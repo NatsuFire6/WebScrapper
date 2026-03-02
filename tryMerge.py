@@ -1,9 +1,10 @@
 from PIL import Image
 import os
+from paths import ZONES, MERGED_ZONES
 
-# Dossier contenant les images à traiter
-input_folder = "C:/Users/LA TOUR MSI DU TURFU/Desktop/python/Nouveau_Webtoons/zones"
-output_dir = "C:/Users/LA TOUR MSI DU TURFU/Desktop/python/Nouveau_Webtoons/merged_zones"
+# Dossier contenant les images à traiter (défini dans paths.py)
+input_folder = ZONES
+output_dir = MERGED_ZONES
 os.makedirs(output_dir, exist_ok=True)
 
 extensions = (".png", ".jpg", ".jpeg", ".bmp")

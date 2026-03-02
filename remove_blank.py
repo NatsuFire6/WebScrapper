@@ -1,9 +1,10 @@
 from PIL import Image
 import os
+from paths import MERGED_ZONES, ONLY_IMG_WITH_INTEREST
 
-# Dossiers
-input_folder = "C:/Users/LA TOUR MSI DU TURFU/Desktop/python/Nouveau_Webtoons/merged_zones"
-output_dir = "C:/Users/LA TOUR MSI DU TURFU/Desktop/python/Nouveau_Webtoons/only_img_with_interest"
+# Dossiers (définis dans paths.py)
+input_folder = MERGED_ZONES
+output_dir = ONLY_IMG_WITH_INTEREST
 os.makedirs(output_dir, exist_ok=True)
 
 # Extensions autorisées

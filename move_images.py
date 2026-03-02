@@ -1,9 +1,10 @@
 import os
 import shutil
+from paths import ONLY_IMG_WITH_INTEREST, VALIDATED_ZONES
 
-input_folder = "only_img_with_interest"
-output_folder = "validated_zones"
-os.mkdir(output_folder, exist_ok=True)
+input_folder = ONLY_IMG_WITH_INTEREST
+output_folder = VALIDATED_ZONES
+os.makedirs(output_folder, exist_ok=True)
 
 extensions = (".png", ".jpg", ".jpeg", ".bmp")
 

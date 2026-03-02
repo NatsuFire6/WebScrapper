@@ -6,9 +6,12 @@ import re
 
 app = Flask(__name__)
 
-ZONES_FOLDER = "only_img_with_interest"
-VALIDATED_FOLDER = "validated_zones"
-TEMP_FOLDER = os.path.join("static", "temp_zones")
+from paths import ONLY_IMG_WITH_INTEREST, VALIDATED_ZONES, TEMP_IMG
+
+ZONES_FOLDER = ONLY_IMG_WITH_INTEREST
+VALIDATED_FOLDER = VALIDATED_ZONES
+TEMP_FOLDER = TEMP_IMG
+
 os.makedirs(VALIDATED_FOLDER, exist_ok=True)
 os.makedirs(TEMP_FOLDER, exist_ok=True)
 os.makedirs(ZONES_FOLDER, exist_ok=True)

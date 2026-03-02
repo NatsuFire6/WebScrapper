@@ -2,11 +2,12 @@ from PIL import Image
 import os
 import shutil
 import hashlib
+from paths import ONLY_IMG_WITH_INTEREST, DUPLICATES_REMOVED
 
-# Dossiers
-input_folder = "C:/Users/LA TOUR MSI DU TURFU/Desktop/python/Nouveau_Webtoons/only_img_with_interest"
-output_dir = "C:/Users/LA TOUR MSI DU TURFU/Desktop/python/Nouveau_Webtoons/only_img_with_interest"
-duplicates_dir = "C:/Users/LA TOUR MSI DU TURFU/Desktop/python/Nouveau_Webtoons/duplicates_removed"
+# Dossiers (définis dans paths.py)
+input_folder = ONLY_IMG_WITH_INTEREST
+output_dir = ONLY_IMG_WITH_INTEREST
+duplicates_dir = DUPLICATES_REMOVED
 os.makedirs(output_dir, exist_ok=True)
 os.makedirs(duplicates_dir, exist_ok=True)
 

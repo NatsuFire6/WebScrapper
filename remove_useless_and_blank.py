@@ -2,12 +2,13 @@ from PIL import Image
 import os
 import shutil
 import hashlib
+from paths import MERGED_ZONES, ONLY_IMG_WITH_INTEREST, DUPLICATES_REMOVED, REMOVED_IMG
 
-# Dossiers
-input_folder = "C:/Users/LA TOUR MSI DU TURFU/Desktop/python/Nouveau_Webtoons/merged_zones"
-output_dir = "C:/Users/LA TOUR MSI DU TURFU/Desktop/python/Nouveau_Webtoons/only_img_with_interest"
-duplicates_dir = "C:/Users/LA TOUR MSI DU TURFU/Desktop/python/Nouveau_Webtoons/duplicates_removed"
-removed_dir = "C:/Users/LA TOUR MSI DU TURFU/Desktop/python/Nouveau_Webtoons/removed_img"
+# Dossiers (définis dans paths.py)
+input_folder = MERGED_ZONES
+output_dir = ONLY_IMG_WITH_INTEREST
+duplicates_dir = DUPLICATES_REMOVED
+removed_dir = REMOVED_IMG
 os.makedirs(output_dir, exist_ok=True)
 os.makedirs(duplicates_dir, exist_ok=True)
 os.makedirs(removed_dir, exist_ok=True)
