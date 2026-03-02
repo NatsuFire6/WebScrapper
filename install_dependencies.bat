@@ -1,55 +1,64 @@
 @echo off
-REM Batch installer for Python3 + project dependencies.
-REM Usage: double-click or run from cmd (NOT PowerShell).
-REM Requires network access and administrator privileges; works on Windows 7/8/10/11.
+setlocal EnableDelayedExpansion
 
-:: ensure we are running under cmd.exe by inspecting COMSPEC
-for %%I in ("%COMSPEC%") do set _cs=%%~nxI
-if /I "%_cs%" NEQ "cmd.exe" (
-    echo This script must be run from a Command Prompt (cmd.exe).
-    echo Please open a cmd window and execute %~nx0 there.
+echo ========================================
+echo Python Installer - Windows 10 / 11
+echo ========================================
+
+:: Vérifier droits admin
+net session >nul 2>&1
+if %errorlevel% neq 0 (
+    echo Ce script doit etre execute en tant qu administrateur.
     pause
     exit /b
 )
 
-
-:: check for conda (Anaconda/Miniconda)
-conda --version >nul 2>&1
-IF %ERRORLEVEL% NEQ 0 (
-    echo Anaconda/Miniconda is not installed. Attempting download and installation...
-    set CONDA_INSTALLER=Anaconda3-latest-Windows-x86_64.exe
-    powershell -Command "Invoke-WebRequest -Uri 'https://repo.anaconda.com/archive/Anaconda3-2025.12-2-Windows-x86_64.exe' -OutFile '%CONDA_INSTALLER%' -UseBasicParsing"
-    if exist %CONDA_INSTALLER% (
-        echo Launching Anaconda installer...
-        start /wait %CONDA_INSTALLER% /S /D=C:\ProgramData\Anaconda3
-        if %ERRORLEVEL% NEQ 0 echo Anaconda installer returned error %ERRORLEVEL%
-        del %CONDA_INSTALLER%
-        echo Installing Jupyter Notebook via conda...
-        call conda install -y notebook
-    ) else (
-        echo Failed to download Anaconda (file not found). Check your network.
-    )
-)
-
-:: check for python3
+:: Vérifier si Python est deja installe
 python --version >nul 2>&1
-IF %ERRORLEVEL% NEQ 0 (
-    echo Python is not installed. Attempting download and installation...
-    set INSTALLER=python-installer.exe
-    powershell -Command "Invoke-WebRequest -Uri 'https://www.python.org/ftp/python/3.14.3/python-3.14.3-amd64.exe' -OutFile '%INSTALLER%' -UseBasicParsing"
-    if exist %INSTALLER% (
-        echo Launching Python installer...
-        start /wait %INSTALLER% /quiet InstallAllUsers=1 PrependPath=1
-        if %ERRORLEVEL% NEQ 0 echo Python installer returned error %ERRORLEVEL%
-        del %INSTALLER%
-    ) else (
-        echo Failed to download Python (file not found). Please install manually.
-        goto END
-    )
+if %errorlevel% equ 0 (
+    echo Python est deja installe.
+    goto INSTALL_DEPS
 )
 
-:: now invoke python script to install packages
+echo Python non detecte. Telechargement...
+
+set PYTHON_VERSION=3.12.8
+set INSTALLER=python-%PYTHON_VERSION%-amd64.exe
+set URL=https://www.python.org/ftp/python/%PYTHON_VERSION%/%INSTALLER%
+
+powershell -Command "[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12; Invoke-WebRequest -Uri '%URL%' -OutFile '%INSTALLER%'"
+
+if not exist %INSTALLER% (
+    echo Echec du telechargement.
+    pause
+    exit /b
+)
+
+echo Installation de Python...
+start /wait %INSTALLER% /quiet InstallAllUsers=1 PrependPath=1
+
+if %errorlevel% neq 0 (
+    echo Erreur lors de l installation de Python.
+    pause
+    exit /b
+)
+
+del %INSTALLER%
+
+:: Rafraichir environnement
+set PATH=%PATH%;C:\Program Files\Python312\
+
+pip install notebook requests
+:INSTALL_DEPS
+echo Installation des dependances...
+
 python install_dependencies.py
 
-:END
+if %errorlevel% neq 0 (
+    echo Erreur lors de l execution du script Python.
+    pause
+    exit /b
+)
+
+echo Installation terminee avec succes.
 pause
