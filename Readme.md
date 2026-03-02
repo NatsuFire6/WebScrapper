@@ -1,4 +1,4 @@
-# To use this project you need to coppy in a new folder :
+# To use this project you need to copy or create in a new folder :
 
 - download_images.ipynb
 - cut_into_zones.py
@@ -25,21 +25,23 @@
   (wait a very long time)
 
 ## Second (transform images):
-⚠️if all image have the same size and they are never cut skip the "Second" step.
+⚠️If all image have the same size and they are never cut skip the "Second" step.
 
  - launch "cut_into_zones.py" //fast
  - launch "tryMerge.py"       //fast
 
 ## Third (remove images):
- - launch "remove_useless_and_blank.py"  // slow and can make mistake with "duplicated img" ~1%
+⚠️If there are multiple times the same images, the following ones will be deleted, so be careful when you do it, it is strongly recommended to even quickly check the images that have just been deleted !
+  If you don't trust the process or don't care about blank skip the "Third" step.
+ - launch "remove_useless_and_blank.py"  // slow
    
 ## Fourth (verify all images):
-⚠️if you don't mind to do "Fourth" step, you can skip it but you need to :
+⚠️If you don't mind to do "Fourth" step, you can skip it but you need to :
  - launch "move_images.py"
 
  - copy all images of the folder "only_img_with_interest/" into "static/zones/"
  - launch "app.py" to be sure only good images are saved
-   take so much time to sort them and try to have almost the same size on all your images
+   take your time to sort them and try to have almost the same size on all your images
 
 ## Fifth (generate galery):
  - launch "generateIndex.py"
