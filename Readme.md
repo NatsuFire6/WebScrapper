@@ -13,7 +13,7 @@ or to git clone this project : "git clone https://github.com/NatsuFire6/WebScrap
  - install Python3
  - install Flask (python's server)
 
- ### In paths.py :
+ ## In paths.py :
  - The "BASE_DIR" path have to be changed to match the place where you want to see the result e.g: "C:/Users/UserName/Desktop/python/Nouveau_Webtoons" --> "C:/Users/JamesTheBest/Desktop/TheBestWebtoons"
 
 ## First (download images):
@@ -25,29 +25,29 @@ or to git clone this project : "git clone https://github.com/NatsuFire6/WebScrap
 
 ## All process :
  - launch "run_steps.bat"
-### OR
-## Second (transform images):
+## OR
+### Second (transform images):
 ⚠️If all image have the same size and they are never cut skip the "Second" step.
 
  - launch "cut_into_zones.py" //fast
  - launch "tryMerge.py"       //fast
 
-## Third (remove useless images):
+### Third (remove useless images):
  - launch "remove_blank.py"  // slow
  
 ⚠️If there are multiple times the same images, the following ones will be deleted, so be careful when you do it, it is strongly recommended to even quickly check the images that have just been deleted !
-  ### If you don't trust the process skip this step.
+  #### If you don't trust the process skip this step.
  - launch "remove_duplicated.py"  // slow
    
-## Fourth (verify all images):
+### Fourth (verify all images):
 ⚠️If you don't care about "Fourth" step, you can skip it but you need to :
  - launch "move_images.py"
-   ### If you care of this step :
+   #### If you care of this step :
  - launch "move_images_for_app.py"
  - launch "app.py" to be sure only good images are saved
    take your time to sort them and try to have almost the same size on all your images
 
-## Fifth (generate galery):
+### Fifth (generate galery):
  - launch "generateIndex.py"
  - open "galery.html" with your browser
  - Enjoy !
