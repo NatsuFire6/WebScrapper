@@ -3,10 +3,11 @@ REM Batch installer for Python3 + project dependencies.
 REM Usage: double-click or run from cmd (NOT PowerShell).
 REM Requires network access and administrator privileges; works on Windows 7/8/10/11.
 
-:: ensure we have a cmd.exe environment by checking cmdextversion
-if "%cmdextversion%"=="" (
-    echo Unable to detect cmd.exe environment (cmdextversion undefined).
-    echo Please run this script from a Command Prompt, not directly from PowerShell.
+:: ensure we are running under cmd.exe by inspecting COMSPEC
+for %%I in ("%COMSPEC%") do set _cs=%%~nxI
+if /I "%_cs%" NEQ "cmd.exe" (
+    echo This script must be run from a Command Prompt (cmd.exe).
+    echo Please open a cmd window and execute %~nx0 there.
     pause
     exit /b
 )
