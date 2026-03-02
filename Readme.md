@@ -38,7 +38,7 @@
 ## Fourth (verify all images):
 ⚠️If you don't mind to do "Fourth" step, you can skip it but you need to :
  - launch "move_images.py"
-
+ If you mind of this step :
  - copy all images of the folder "only_img_with_interest/" into "static/zones/"
  - launch "app.py" to be sure only good images are saved
    take your time to sort them and try to have almost the same size on all your images
