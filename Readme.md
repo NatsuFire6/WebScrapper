@@ -2,26 +2,25 @@ I make a presentation'video for this project but she's in french, if you want to
 
 # (English) To use this project you need to :
 
-install the zip file at : "https://github.com/NatsuFire6/WebScrapper/releases/tag/1.0"
-or to git clone this project : "git clone https://github.com/NatsuFire6/WebScrapper.git"
+ - install the zip file at : "https://github.com/NatsuFire6/WebScrapper/releases/tag/1.0"
+ - or to git clone this project : "git clone https://github.com/NatsuFire6/WebScrapper.git"
 
 ## Zero (install dependencies):
  - Launch "install_dependencies.bat"
   #### OR
- - install anaconda navigator
- - install jupyter "Notebook"
- - install Python3
+ - install anaconda navigator : "https://repo.anaconda.com/archive/Anaconda3-2025.12-2-Windows-x86_64.exe"
+ - install "jupyter Notebook" in anaconda navigator
+ - install Python3 : "https://www.python.org/ftp/python/3.14.3/python-3.14.3-amd64.exe"
  - install Flask (python's server)
 
  ## In paths.py :
  - The "BASE_DIR" path have to be changed to match the place where you want to see the result e.g: "C:/Users/UserName/Desktop/python/Nouveau_Webtoons" --> "C:/Users/JamesTheBest/Desktop/TheBestWebtoons"
 
 ## First (download images):
-- open "download_images.ipynb" with Jupyter notebook
-  change the webtoons URL to the first one of wich one you want
-  change the "output_dir" to the correct path
-  launch all the script with jupiter notebook //very slow
-  (wait as long as necessary, the program should end with an error and that is normal)
+ - open "download_images.ipynb" with Jupyter notebook
+ - change the webtoons URL to the first one of wich one you want
+ - launch all the script with jupiter notebook //very slow
+ - (wait as long as necessary, the program should end with an error and that is normal)
 
 ## All process :
  - launch "run_steps.bat"
@@ -45,7 +44,7 @@ or to git clone this project : "git clone https://github.com/NatsuFire6/WebScrap
    #### If you care of this step :
  - launch "move_images_for_app.py"
  - launch "app.py" to be sure only good images are saved
-   take your time to sort them and try to have almost the same size on all your images
+ - take your time to sort them and try to have almost the same size on all your images
 
 ### Fifth (generate galery):
  - launch "generateIndex.py"
@@ -55,8 +54,8 @@ or to git clone this project : "git clone https://github.com/NatsuFire6/WebScrap
 
 # (Français) Pour utiliser ce projet vous devez :
 
-installer le fichier zip : "https://github.com/NatsuFire6/WebScrapper/releases/tag/1.0"
-ou git clone ce projet : "git clone https://github.com/NatsuFire6/WebScrapper.git"
+ - installer le fichier zip : "https://github.com/NatsuFire6/WebScrapper/releases/tag/1.0"
+ - ou git clone ce projet : "git clone https://github.com/NatsuFire6/WebScrapper.git"
 
 ## 0. (installer les dépendances):
  - Exécuter "install_dependencies.bat"
@@ -71,11 +70,10 @@ ou git clone ce projet : "git clone https://github.com/NatsuFire6/WebScrapper.gi
  - Le chemin "BASE_DIR" doit être modifié pour correspondre à l'emplacement où vous voulez voir le résultat ex : "C: Users/UserName/Desktop/python/Nouveau_Webtoons" --> "C:/Users/JamesTheBest/Desktop/TheBestWebtoons"
 
 ## 1. (téléchargez les images):
-- ouvrez "download_images.ipynb" avec Jupyter notebook
-  changez l'URL du webtoons pour le premier episode du webtoons que vous voulez
-  changez le "output_dir" vers le chemin correct (changer le chemin)
-  exécutez tout le script avec Jupyter notebook //très lent
-  (attendez aussi longtemps que nécessaire, le programme devrait ce terminer avec une erreur et c'est normal)
+ - ouvrez "download_images.ipynb" avec Jupyter notebook
+ - changez l'URL du webtoons pour le premier episode du webtoons que vous voulez
+ - exécutez tout le script avec Jupyter notebook //très lent
+ - (attendez aussi longtemps que nécessaire, le programme devrait ce terminer avec une erreur et c'est normal)
 
 ## Tout faire d'un coup :
  - Exécuter "run_steps.bat"
