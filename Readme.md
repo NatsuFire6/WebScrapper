@@ -55,7 +55,7 @@ I make a video of presentation for this project but she's in french, if you want
  - launch "generateIndex.py"
  - open "galery.html" with your browser
  - Enjoy !
-
+ - Hint: launch "remove_old_folders.py" to remove all images and folders you no longer need !
 
 # (Français) Pour utiliser ce projet, vous devez copier dans un nouveau dossier :
 
@@ -113,4 +113,4 @@ I make a video of presentation for this project but she's in french, if you want
 - Exécutez "generateIndex.py"
 - ouvrez "galery.html" avec votre navigateur
 - Profitez !
-
+- Tip : Exécute le script "remove_old_folders.py" pour vider tout ce qui ne te sert plus !
