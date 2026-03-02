@@ -19,7 +19,7 @@
  - install Flask (python's server)
 
  ### In paths.py :
- - The "BASE_DIR" path must be changed to match the place where you want to see the result e.g: "C:/Users/UserName/Desktop/python/Nouveau_Webtoons/ALLimages/" --> "C:/Users/JamesTheBest/Desktop/TheBestWebtoons/ALLimages/"
+ - The "BASE_DIR" path must be changed to match the place where you want to see the result e.g: "C:/Users/UserName/Desktop/python/Nouveau_Webtoons" --> "C:/Users/JamesTheBest/Desktop/TheBestWebtoons"
 
 ## First (download images):
 - open "download_images.ipynb" with Jupyter notebook
@@ -77,7 +77,7 @@
  
 
  ### Dans paths.py :
-  - Le chemin "BASE_DIR" doit être modifié pour correspondre à l'emplacement où vous voulez voir le résultat ex : "C:/Users/UserName/Desktop/python/Nouveau_Webtoons/ALLimages/" --> "C:/Users/JamesTheBest/Desktop/TheBestWebtoons/ALLimages/"
+  - Le chemin "BASE_DIR" doit être modifié pour correspondre à l'emplacement où vous voulez voir le résultat ex : "C:/Users/UserName/Desktop/python/Nouveau_Webtoons" --> "C:/Users/JamesTheBest/Desktop/TheBestWebtoons"
 
 ## 1. (téléchargez les images):
 - ouvrez "download_images.ipynb" avec Jupyter notebook
