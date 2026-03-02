@@ -1,20 +1,13 @@
 I make a presentation'video for this project but she's in french, if you want to see it : "https://www.youtube.com/watch?v=XiLaqIsAz-Q"
 
-# (English) To use this project you need to copy in a new folder :
+# (English) To use this project you need to :
 
-- download_images.ipynb
-- paths.py
-- cut_into_zones.py
-- tryMerge.py
-- remove_blank.py
-- remove_Duplicated.py
-- app.py
-- move_images.py
-- remove_old_folder.py
-- generateIndex.py
-- templates/index.html
+install the zip file at : "https://github.com/NatsuFire6/WebScrapper/releases/tag/1.0"
+or to git clone this project : "git clone https://github.com/NatsuFire6/WebScrapper.git"
 
-## Zero (install dependencys):
+## Zero (install dependencies):
+ - Launch "install_dependencies.bat"
+  #### OR
  - install anaconda navigator
  - install jupyter "Notebook"
  - install Python3
@@ -30,6 +23,9 @@ I make a presentation'video for this project but she's in french, if you want to
   launch all the script with jupiter notebook //very slow
   (wait as long as necessary, the program should end with an error and that is normal)
 
+## All process :
+ - launch "run_steps.bat"
+### OR
 ## Second (transform images):
 ⚠️If all image have the same size and they are never cut skip the "Second" step.
 
@@ -44,10 +40,10 @@ I make a presentation'video for this project but she's in french, if you want to
  - launch "remove_duplicated.py"  // slow
    
 ## Fourth (verify all images):
-⚠️If you don't mind it "Fourth" step, you can skip it but you need to :
+⚠️If you don't care about "Fourth" step, you can skip it but you need to :
  - launch "move_images.py"
-   ### If you mind of this step :
- - copy all images of the folder "only_img_with_interest/" into "static/zones/"
+   ### If you care of this step :
+ - launch "move_images_for_app.py"
  - launch "app.py" to be sure only good images are saved
    take your time to sort them and try to have almost the same size on all your images
 
@@ -57,29 +53,22 @@ I make a presentation'video for this project but she's in french, if you want to
  - Enjoy !
  - Hint: launch "remove_old_folders.py" to remove all images and folders you no longer need !
 
-# (Français) Pour utiliser ce projet, vous devez copier dans un nouveau dossier :
+# (Français) Pour utiliser ce projet vous devez :
 
-- download_images.ipynb
-- paths.py
-- cut_into_zones.py
-- tryMerge.py
-- remove_blank.py
-- remove_Duplicated.py
-- app.py
-- move_images.py
-- remove_old_folder.py
-- generateIndex.py
-- templates/index.html
+installer le fichier zip : "https://github.com/NatsuFire6/WebScrapper/releases/tag/1.0"
+ou git clone ce projet : "git clone https://github.com/NatsuFire6/WebScrapper.git"
 
 ## 0. (installer les dépendances):
- - installer anaconda navigator
- - installer jupyter "Notebook"
- - installer Python3
+ - Exécuter "install_dependencies.bat"
+  ### OU
+ - installer anaconda navigator : "https://repo.anaconda.com/archive/Anaconda3-2025.12-2-Windows-x86_64.exe"
+ - installer "jupyter Notebook" dans anaconda navigator
+ - installer Python3 : "https://www.python.org/ftp/python/3.14.3/python-3.14.3-amd64.exe"
  - installer Flask (python's server)
  
 
- ### Dans paths.py :
-  - Le chemin "BASE_DIR" doit être modifié pour correspondre à l'emplacement où vous voulez voir le résultat ex : "C:/Users/UserName/Desktop/python/Nouveau_Webtoons" --> "C:/Users/JamesTheBest/Desktop/TheBestWebtoons"
+## Dans paths.py :
+ - Le chemin "BASE_DIR" doit être modifié pour correspondre à l'emplacement où vous voulez voir le résultat ex : "C: Users/UserName/Desktop/python/Nouveau_Webtoons" --> "C:/Users/JamesTheBest/Desktop/TheBestWebtoons"
 
 ## 1. (téléchargez les images):
 - ouvrez "download_images.ipynb" avec Jupyter notebook
@@ -88,28 +77,31 @@ I make a presentation'video for this project but she's in french, if you want to
   exécutez tout le script avec Jupyter notebook //très lent
   (attendez aussi longtemps que nécessaire, le programme devrait ce terminer avec une erreur et c'est normal)
 
-## 2. (transformer les images):
+## Tout faire d'un coup :
+ - Exécuter "run_steps.bat"
+## Ou
+### 2. (transformer les images):
 ⚠️Si toutes les images ont la même taille et qu'elles ne sont jamais coupées, sautez cette l'étape.
 
  - Exécutez "cut_into_zones.py" //Rapide
  - Exécutez "tryMerge.py"       //Rapide
 
-## 3. (supprimer les images inutiles):
+### 3. (supprimer les images inutiles):
  - Exécutez "remove_blank.py"  // Rapide
  
 ⚠️Si les mêmes images apparaissent plusieurs fois, les suivantes seront supprimées, alors faites attention lorsque vous le faites, il est fortement recommandé de vérifier même rapidement les images qui viennent d'être supprimées !
-### Si vous ne faites pas confiance au processus, passez cette étape.
+#### Si vous ne faites pas confiance au processus, passez cette étape.
   - Exécutez "remove_duplicated.py" // lent
    
-## 4. (vérifiez toutes les images) :
+### 4. (vérifiez toutes les images) :
 ⚠️Si cela ne vous dérange pas, vous pouvez passer cette étape, mais vous devrez :
   - Exécutez « move_images.py »
-### Si vous voulez faire cette étape :
+#### Si vous voulez faire cette étape :
   - copiez toutes les images du dossier « only_img_with_interest/ » dans « static/zones/ »
   - Exécutez « app.py » pour vous assurer que seules les bonnes images sont sauvegardées
   prenez votre temps pour les trier et essayez d'avoir presque la même taille pour toutes vos images
 
-## 5. (générer la galerie) :
+### 5. (générer la galerie) :
 - Exécutez "generateIndex.py"
 - ouvrez "galery.html" avec votre navigateur
 - Profitez !

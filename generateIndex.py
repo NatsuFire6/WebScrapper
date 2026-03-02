@@ -5,11 +5,11 @@ import re
 def natural_key(s):
     return [int(text) if text.isdigit() else text.lower() for text in re.split(r'(\d+)', s)]
 
-from paths import VALIDATED_ZONES, OUTPUT_HTML
+from paths import VALIDATED_ZONES, GALLERY_HTML
 
 # Dossier contenant les images fusionnées (depuis paths.py)
 merged_dir = VALIDATED_ZONES
-output_html = OUTPUT_HTML
+output_html = GALLERY_HTML
 
 # Filtres d'extension d'images valides
 valid_extensions = ('.jpg', '.jpeg', '.png')

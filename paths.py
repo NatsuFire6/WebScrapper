@@ -17,7 +17,9 @@ DUPLICATES_REMOVED = os.path.join(BASE_DIR, "duplicates_removed")
 VALIDATED_ZONES = os.path.join(BASE_DIR, "validated_zones")
 REMOVED_IMG = os.path.join(BASE_DIR, "removed_img")
 TEMP_IMG = os.path.join(BASE_DIR, "static", "temp_zones")
-OUTPUT_HTML = "galery.html"
+
+# fichier de sortie de la galerie HTML
+GALLERY_HTML = os.path.join(BASE_DIR, "galery.html")
 
 # exemple :
 # from paths import MERGED_ZONES, ONLY_IMG_WITH_INTEREST
