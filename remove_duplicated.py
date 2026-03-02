@@ -4,9 +4,9 @@ import shutil
 import hashlib
 
 # Dossiers
-input_folder = "C:/Users/LA TOUR MSI DU TURFU/Desktop/python/images_after_GPT/only_img_with_interest"
-output_dir = "C:/Users/LA TOUR MSI DU TURFU/Desktop/python/images_after_GPT/only_img_with_interest"
-duplicates_dir = "C:/Users/LA TOUR MSI DU TURFU/Desktop/python/images_after_GPT/duplicates_removed"
+input_folder = "C:/Users/LA TOUR MSI DU TURFU/Desktop/python/Nouveau_Webtoons/only_img_with_interest"
+output_dir = "C:/Users/LA TOUR MSI DU TURFU/Desktop/python/Nouveau_Webtoons/only_img_with_interest"
+duplicates_dir = "C:/Users/LA TOUR MSI DU TURFU/Desktop/python/Nouveau_Webtoons/duplicates_removed"
 os.makedirs(output_dir, exist_ok=True)
 os.makedirs(duplicates_dir, exist_ok=True)
 

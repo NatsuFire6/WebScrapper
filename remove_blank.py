@@ -2,8 +2,8 @@ from PIL import Image
 import os
 
 # Dossiers
-input_folder = "C:/Users/LA TOUR MSI DU TURFU/Desktop/python/images_after_GPT/merged_zones"
-output_dir = "C:/Users/LA TOUR MSI DU TURFU/Desktop/python/images_after_GPT/only_img_with_interest"
+input_folder = "C:/Users/LA TOUR MSI DU TURFU/Desktop/python/Nouveau_Webtoons/merged_zones"
+output_dir = "C:/Users/LA TOUR MSI DU TURFU/Desktop/python/Nouveau_Webtoons/only_img_with_interest"
 os.makedirs(output_dir, exist_ok=True)
 
 # Extensions autorisées

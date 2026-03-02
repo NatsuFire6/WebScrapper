@@ -31,9 +31,11 @@
  - launch "tryMerge.py"       //fast
 
 ## Third (remove images):
+ - launch "remove_blank.py"  // slow
+ 
 ⚠️If there are multiple times the same images, the following ones will be deleted, so be careful when you do it, it is strongly recommended to even quickly check the images that have just been deleted !
-  If you don't trust the process or don't care about blank skip the "Third" step.
- - launch "remove_useless_and_blank.py"  // slow
+  ### If you don't trust the process skip this step.
+ - launch "remove_duplicated.py"  // slow
    
 ## Fourth (verify all images):
 ⚠️If you don't mind to do "Fourth" step, you can skip it but you need to :
