@@ -1,3 +1,5 @@
+I make a video of presentation for this project but she's in french, if you want to see it : "https://www.youtube.com/watch?v=XiLaqIsAz-Q"
+
 # (English) To use this project you need to copy in a new folder :
 
 - download_images.ipynb
