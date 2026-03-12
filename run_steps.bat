@@ -6,22 +6,6 @@ set SCRIPTS=cut_into_zones.py tryMerge.py remove_blank.py remove_duplicated.py
 
 REM handle app.py separately with pre-check question
 
-echo Verification de Jupyter Notebook...
-
-where jupyter >nul 2>nul
-
-if %errorlevel% neq 0 (
-    echo ERREUR : Jupyter Notebook n'est pas installe.
-    pause
-    exit
-)
-
-echo Lancement du notebook...
-
-jupyter notebook download_images.ipynb
-
-pause
-
 for %%F in (%SCRIPTS%) do (
     set /p answer=Do you want to run %%F? [Y/n] : 
     if /I "%%answer%%"=="Y" (

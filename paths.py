@@ -6,7 +6,7 @@ sans avoir à éditer chaque fichier individuellement.
 import os
 
 # base workspace for webtoons project
-BASE_DIR = r"C:/Users/UserName/Desktop/python/Nouveau_Webtoons"
+BASE_DIR = r"C:/Users/MOI/Desktop/python/Nouveau_Webtoons"
 
 # dossiers d'entrée / sortie utilisés fréquemment
 ALL_IMAGES = os.path.join(BASE_DIR, "AllImages")

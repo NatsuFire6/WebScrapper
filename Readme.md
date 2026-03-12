@@ -17,7 +17,7 @@ I make a presentation'video for this project but she's in french, if you want to
  - The "BASE_DIR" path have to be changed to match the place where you want to see the result e.g: "C:/Users/UserName/Desktop/python/Nouveau_Webtoons" --> "C:/Users/JamesTheBest/Desktop/TheBestWebtoons"
 
 ## First (download images):
- - open "download_images.ipynb" with Jupyter notebook
+ - launch "openJupyter.bat" or open "download_images.ipynb" with Jupyter notebook
  - change the webtoons URL to the first one of wich one you want
  - launch all the script with jupiter notebook //very slow
  - (wait as long as necessary, the program should end with an error and that is normal)
@@ -69,10 +69,10 @@ I make a presentation'video for this project but she's in french, if you want to
  - Le chemin "BASE_DIR" doit être modifié pour correspondre à l'emplacement où vous voulez voir le résultat ex : "C: Users/UserName/Desktop/python/Nouveau_Webtoons" --> "C:/Users/JamesTheBest/Desktop/TheBestWebtoons"
 
 ## 1. (téléchargez les images):
- - ouvrez "download_images.ipynb" avec Jupyter notebook
+ - lancer "openJupyter.bat" ou ouvrez "download_images.ipynb" avec Jupyter notebook
  - changez l'URL du webtoons pour le premier episode du webtoons que vous voulez
  - exécutez tout le script avec Jupyter notebook //très lent
- - (attendez aussi longtemps que nécessaire, le programme devrait ce terminer avec une erreur et c'est normal)
+ - (attendez aussi longtemps que nécessaire, le programme devrait ce terminer avec une erreur mais c'est normal (du moment que beaucoup d'épisodes on été télécharger))
 
 ## Tout faire d'un coup :
  - Exécuter "run_steps.bat"

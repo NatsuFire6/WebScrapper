@@ -5,10 +5,7 @@ echo =====================================
 echo INSTALLATION ENVIRONNEMENT PYTHON
 echo =====================================
 
-set ANACONDA_URL=https://repo.anaconda.com/archive/Anaconda3-2025.12-2-Windows-x86_64.exe
 set PYTHON_URL=https://www.python.org/ftp/python/3.14.3/python-3.14.3-amd64.exe
-
-set ANACONDA_INSTALLER=anaconda_installer.exe
 set PYTHON_INSTALLER=python_installer.exe
 
 echo.
@@ -21,8 +18,10 @@ if %errorlevel% neq 0 (
     powershell -Command "Invoke-WebRequest -Uri '%PYTHON_URL%' -OutFile '%PYTHON_INSTALLER%'"
 
     echo Installation Python...
-
     start /wait %PYTHON_INSTALLER% /quiet InstallAllUsers=1 PrependPath=1 Include_test=0
+
+    REM Suppression de l’installateur après installation
+    del /f /q "%PYTHON_INSTALLER%"
 ) else (
     echo Python detecte.
 )
@@ -56,7 +55,20 @@ if %errorlevel% neq 0 (
 
 echo.
 echo Activation de conda...
-call "%USERPROFILE%\Miniconda3\Scripts\activate.bat"
+for /f "delims=" %%i in ('where conda.bat 2^>nul') do set "CONDA_BAT=%%i"
+if not defined CONDA_BAT (
+    echo ERREUR : conda introuvable.
+    pause
+    exit /b
+)
+
+call "%CONDA_BAT%" activate
+
+echo Verification des Terms of Service...
+call "%CONDA_BAT%" tos accept --override-channels --channel https://repo.anaconda.com/pkgs/main >nul 2>nul
+call "%CONDA_BAT%" tos accept --override-channels --channel https://repo.anaconda.com/pkgs/r >nul 2>nul
+call "%CONDA_BAT%" tos accept --override-channels --channel https://repo.anaconda.com/pkgs/msys2 >nul 2>nul
+echo Terms of Service verifies.
 
 REM Vérification et création de l'environnement isolé minimal
 conda env list | findstr %ENV_NAME% >nul
@@ -78,38 +90,6 @@ if %errorlevel% neq 0 (
 ) else (
     echo Jupyter Notebook detecte.
 )
-::echo.
-::echo Verification Anaconda...
-::
-::where conda >nul 2>nul
-::if %errorlevel% neq 0 (
-::    echo Anaconda non detecte. Telechargement...
-::
-::    powershell -Command "Invoke-WebRequest -Uri '%ANACONDA_URL%' -OutFile '%ANACONDA_INSTALLER%'"
-::
-::    echo Installation Anaconda...
-::
-::    start /wait %ANACONDA_INSTALLER% /S /InstallationType=JustMe /AddToPath=1 /RegisterPython=0
-::) else (
-::    echo Anaconda detecte.
-::)
-::
-::echo.
-::echo Initialisation de conda...
-::
-::call "%USERPROFILE%\Anaconda3\Scripts\activate.bat"
-::
-::echo.
-::echo Verification Jupyter Notebook...
-::
-::where jupyter >nul 2>nul
-::if %errorlevel% neq 0 (
-::    echo Installation de Jupyter Notebook via conda...
-::
-::    conda install -y notebook
-::) else (
-::    echo Jupyter detecte.
-::)
 
 echo.
 echo Verification finale...
