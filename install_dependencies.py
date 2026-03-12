@@ -1,12 +1,6 @@
-"""Installe automatiquement les dépendances Python requises pour le projet.
-Ce script peut être transformé en exécutable Windows (.exe) via pyinstaller :
-
-    pyinstaller --onefile install_dependencies.py
-
-Il suffit ensuite de lancer l'exécutable sur une machine disposant de Python.
-"""
 import subprocess
 import sys
+import importlib.util
 
 REQUIRED_PACKAGES = [
     "flask",
@@ -15,21 +9,24 @@ REQUIRED_PACKAGES = [
     "pillow",
 ]
 
+def is_installed(package):
+    """Vérifie si un package Python est déjà installé."""
+    return importlib.util.find_spec(package) is not None
 
 def install(package):
     print(f"Installing {package}...")
     subprocess.check_call([sys.executable, "-m", "pip", "install", package])
 
-
 def main():
-    """Installe chaque dépendance et affiche le résultat."""
     for pkg in REQUIRED_PACKAGES:
+        if is_installed(pkg):
+            print(f"{pkg} déjà installé.")
+            continue
         try:
             install(pkg)
         except subprocess.CalledProcessError:
             print(f"Erreur lors de l'installation de {pkg}")
-    print("\n✅ Toutes les dépendances tentées. Vérifiez les messages ci-dessus pour les erreurs.")
-
+    print("\nInstallation terminée.")
 
 if __name__ == "__main__":
     main()
