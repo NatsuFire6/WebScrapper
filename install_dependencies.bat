@@ -1,64 +1,96 @@
 @echo off
-setlocal EnableDelayedExpansion
+setlocal
 
-echo ========================================
-echo Python Installer - Windows 10 / 11
-echo ========================================
+echo =====================================
+echo INSTALLATION ENVIRONNEMENT PYTHON
+echo =====================================
 
-:: Vérifier droits admin
-net session >nul 2>&1
+set ANACONDA_URL=https://repo.anaconda.com/archive/Anaconda3-2025.12-2-Windows-x86_64.exe
+set PYTHON_URL=https://www.python.org/ftp/python/3.14.3/python-3.14.3-amd64.exe
+
+set ANACONDA_INSTALLER=anaconda_installer.exe
+set PYTHON_INSTALLER=python_installer.exe
+
+echo.
+echo Verification Python...
+
+where python >nul 2>nul
 if %errorlevel% neq 0 (
-    echo Ce script doit etre execute en tant qu administrateur.
-    pause
-    exit /b
+    echo Python non detecte. Telechargement...
+
+    powershell -Command "Invoke-WebRequest -Uri '%PYTHON_URL%' -OutFile '%PYTHON_INSTALLER%'"
+
+    echo Installation Python...
+
+    start /wait %PYTHON_INSTALLER% /quiet InstallAllUsers=1 PrependPath=1 Include_test=0
+) else (
+    echo Python detecte.
 )
 
-:: Vérifier si Python est deja installe
-python --version >nul 2>&1
-if %errorlevel% equ 0 (
-    echo Python est deja installe.
-    goto INSTALL_DEPS
-)
+echo.
+echo Verification Anaconda...
 
-echo Python non detecte. Telechargement...
-
-set PYTHON_VERSION=3.12.8
-set INSTALLER=python-%PYTHON_VERSION%-amd64.exe
-set URL=https://www.python.org/ftp/python/%PYTHON_VERSION%/%INSTALLER%
-
-powershell -Command "[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12; Invoke-WebRequest -Uri '%URL%' -OutFile '%INSTALLER%'"
-
-if not exist %INSTALLER% (
-    echo Echec du telechargement.
-    pause
-    exit /b
-)
-
-echo Installation de Python...
-start /wait %INSTALLER% /quiet InstallAllUsers=1 PrependPath=1
-
+where conda >nul 2>nul
 if %errorlevel% neq 0 (
-    echo Erreur lors de l installation de Python.
-    pause
-    exit /b
+    echo Anaconda non detecte. Telechargement...
+
+    powershell -Command "Invoke-WebRequest -Uri '%ANACONDA_URL%' -OutFile '%ANACONDA_INSTALLER%'"
+
+    echo Installation Anaconda...
+
+    start /wait %ANACONDA_INSTALLER% /S /InstallationType=JustMe /AddToPath=1 /RegisterPython=0
+) else (
+    echo Anaconda detecte.
 )
 
-del %INSTALLER%
+echo.
+echo Initialisation de conda...
 
-:: Rafraichir environnement
-set PATH=%PATH%;C:\Program Files\Python312\
+call "%USERPROFILE%\Anaconda3\Scripts\activate.bat"
 
-pip install notebook requests
-:INSTALL_DEPS
-echo Installation des dependances...
+echo.
+echo Verification Jupyter Notebook...
+
+where jupyter >nul 2>nul
+if %errorlevel% neq 0 (
+    echo Installation de Jupyter Notebook via conda...
+
+    conda install -y notebook
+) else (
+    echo Jupyter detecte.
+)
+
+echo.
+echo Verification finale...
+
+where python >nul 2>nul
+if %errorlevel% neq 0 (
+    echo ERREUR : Python non installe correctement.
+    pause
+    exit
+)
+
+where jupyter >nul 2>nul
+if %errorlevel% neq 0 (
+    echo ERREUR : Jupyter non installe correctement.
+    pause
+    exit
+)
+
+where conda >nul 2>nul
+if %errorlevel% neq 0 (
+    echo ERREUR : Anaconda non installe correctement.
+    pause
+    exit
+)
+
+echo.
+echo =====================================
+echo INSTALLATION DEPENDANCES PYTHON
+echo =====================================
 
 python install_dependencies.py
 
-if %errorlevel% neq 0 (
-    echo Erreur lors de l execution du script Python.
-    pause
-    exit /b
-)
-
-echo Installation terminee avec succes.
+echo.
+echo Installation terminee.
 pause

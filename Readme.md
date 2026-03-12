@@ -63,8 +63,7 @@ I make a presentation'video for this project but she's in french, if you want to
  - installer anaconda navigator : "https://repo.anaconda.com/archive/Anaconda3-2025.12-2-Windows-x86_64.exe"
  - installer "jupyter Notebook" dans anaconda navigator
  - installer Python3 : "https://www.python.org/ftp/python/3.14.3/python-3.14.3-amd64.exe"
- - installer Flask (python's server)
- 
+ - installer Flask (serveur python)
 
 ## Dans paths.py :
  - Le chemin "BASE_DIR" doit être modifié pour correspondre à l'emplacement où vous voulez voir le résultat ex : "C: Users/UserName/Desktop/python/Nouveau_Webtoons" --> "C:/Users/JamesTheBest/Desktop/TheBestWebtoons"
